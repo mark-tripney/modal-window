@@ -12,8 +12,8 @@ body {
 
 .card {
   background-color: #fff;
-  padding: 10px;
-  border-radius: 10px;
+  padding: 0.75rem;
+  border-radius: 5px;
 }
 
 .card img {
@@ -26,4 +26,34 @@ button {
   font-size: 0.8em;
   background-color: #6e6f7d;
   color: #fff;
+}
+
+.modal-outer {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background-color: #60463b;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  /* Hide modal until required */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.modal-outer.open {
+  /* Make visible */
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal-inner {
+  min-width: 400px;
+  min-height: 500px;
+  padding: 2rem;
+  border-radius: 5px;
+  background-color: #fff;
 }
