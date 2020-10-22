@@ -24,20 +24,17 @@ cardButtons.forEach((button) => {
   button.addEventListener('click', handleCardButtonClick);
 });
 
+// If user clicks outside modal (no closest 'modal-foreground' class), return true
 modalBackground.addEventListener('click', function (e) {
-  // If user clicks outside modal (no closest 'modal-foreground' class), return true
   const outOfModal = !e.target.closest('.modal-foreground');
   if (outOfModal) {
     closeModal();
   }
 });
 
+// Close modal viewer if user presses Escape key
 window.addEventListener('keydown', function (e) {
   if (e.key === 'Escape' && modalBackground.classList.contains('open')) {
     closeModal();
   }
 });
-
-if (modalBackground.classList.contains('open')) {
-  console.log('OPEN');
-}
